@@ -23,7 +23,7 @@ schema_view = get_swagger_view(title="Cedric's Blog API")
 
 
 urlpatterns = [
-    path('', schema_view),
+    path('docs/', schema_view),
     path('admin/', admin.site.urls),
     path('blog/', include("blog.urls"))
 ]
