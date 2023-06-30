@@ -17,9 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls.conf import include
+from rest_framework_swagger.views import get_swagger_view
+
+schema_view = get_swagger_view(title="Cedric's Blog API")
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('blog/', include("blog.urls"))
+    path('blog/', include("blog.urls")),
+    path('docs/', schema_view)
 ]

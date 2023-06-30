@@ -1,10 +1,11 @@
-from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework import generics, status
+from rest_framework.response import Response
 
-from blog.models import Post
-from blog.serializers import PostSerializer
 
+
+from .models import Post
+from .serializers import PostSerializer
 
 
 class CreatePost(generics.GenericAPIView):
@@ -33,3 +34,11 @@ class ViewAllPosts(generics.ListAPIView):
 
     def get_queryset(self):
         return super().get_queryset()
+
+
+
+# schema_view = get_swagger_view(title="Cedric's Blog API")
+#
+# urlpatterns = [
+#     url(r'^$', schema_view)
+# ]
